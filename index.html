@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoadPack</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>LoadPack</h1>
+      <p class="tagline">Smart backpack that measures load & balance using sensors + BLE.</p>
+      <nav>
+        <a href="#how">How it works</a>
+        <a href="demo.html">Live Demo</a>
+        <a href="#app">App</a>
+        <a href="#team">Team</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <h2>Know your load. Improve comfort. Stay safe.</h2>
+        <p>
+          LoadPack uses strap load sensors (left + right) to estimate total load and balance.
+          The ESP32 broadcasts data over Bluetooth (BLE) to a mobile app and to this website demo.
+        </p>
+        <div class="buttons">
+          <a class="btn" href="demo.html">Open Live Demo</a>
+          <a class="btn secondary" href="#how">How it Works</a>
+        </div>
+      </div>
+      <div class="card">
+        <p><b>Data path:</b> Load Cells → HX711 → ESP32 → BLE → App/Website</p>
+        <p><b>Deliverables:</b> Prototype + app + live web demo</p>
+        <p><b>Due:</b> Jan 13</p>
+      </div>
+    </section>
+
+    <section id="how">
+      <h3>How it works</h3>
+      <ol>
+        <li>Two load cells measure strap tension (left + right).</li>
+        <li>HX711 amplifiers convert sensor signal to readable values.</li>
+        <li>ESP32 calculates L/R/Total and sends BLE notifications.</li>
+        <li>App + Website display live values and can log data.</li>
+      </ol>
+
+      <div class="diagram" aria-label="System diagram">
+        <div class="box">Load Cells</div><div class="arrow">→</div>
+        <div class="box">HX711</div><div class="arrow">→</div>
+        <div class="box">ESP32</div><div class="arrow">→</div>
+        <div class="box">BLE</div><div class="arrow">→</div>
+        <div class="box">App + Website</div>
+      </div>
+    </section>
+
+    <section id="app">
+      <h3>Mobile app</h3>
+      <ul>
+        <li>Live Left/Right/Total</li>
+        <li>Record sessions</li>
+        <li>Export CSV</li>
+      </ul>
+      <p class="small">Add screenshots here once your app UI is ready.</p>
+    </section>
+
+    <section id="team">
+      <h3>Team</h3>
+      <p class="small">Replace this with your names and roles.</p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> LoadPack</p>
+    </footer>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>

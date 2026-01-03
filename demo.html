@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoadPack Live Demo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>LoadPack Live Demo</h1>
+      <p class="tagline">Connect to the ESP32 over Bluetooth (Web Bluetooth).</p>
+      <nav>
+        <a href="index.html">← Back</a>
+      </nav>
+    </header>
+
+    <section class="card">
+      <p><b>Status:</b> <span id="status">Not connected</span></p>
+      <div class="buttons">
+        <button id="btnConnect" class="btn">Connect Bluetooth</button>
+        <button id="btnDisconnect" class="btn secondary" disabled>Disconnect</button>
+      </div>
+      <p class="small">
+        Requirements: Chrome/Edge, HTTPS hosting (GitHub Pages works), and BLE enabled on your device.
+      </p>
+    </section>
+
+    <section>
+      <h3>Live readings</h3>
+      <div class="grid">
+        <div class="metric">
+          <div class="label">Left (kg)</div>
+          <div id="left" class="value">--</div>
+        </div>
+        <div class="metric">
+          <div class="label">Right (kg)</div>
+          <div id="right" class="value">--</div>
+        </div>
+        <div class="metric wide">
+          <div class="label">Total (kg)</div>
+          <div id="total" class="value">--</div>
+        </div>
+      </div>
+      <p class="small" id="raw"></p>
+      <details class="small">
+        <summary>Troubleshooting</summary>
+        <ul>
+          <li>Make sure the ESP32 is advertising BLE and your computer/phone Bluetooth is ON.</li>
+          <li>Web Bluetooth works best on desktop Chrome/Edge. iOS Safari does not support Web Bluetooth.</li>
+          <li>Your ESP32 must expose the Service UUID + Notify Characteristic UUID that match demo.js.</li>
+        </ul>
+      </details>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> LoadPack</p>
+    </footer>
+  </div>
+
+  <script src="demo.js"></script>
+</body>
+</html>
