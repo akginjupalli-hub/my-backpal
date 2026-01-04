@@ -1,84 +1,180 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadPack</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>My BackPal</title>
+
+  <!-- App Icon / PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="logo.png">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.5;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    section {
+      padding: 40px 20px;
+      border-top: 1px solid #1e293b;
+    }
+
+    .card {
+      background: #020617;
+      border-radius: 14px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 700px;
+    }
+
+    .install-btn {
+      background: #2563eb;
+      color: white;
+      padding: 16px 26px;
+      font-size: 18px;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 999;
+    }
+
+    .modal-content {
+      background: #020617;
+      margin: 10% auto;
+      padding: 25px;
+      border-radius: 16px;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .qr-img {
+      width: 220px;
+      margin: 15px 0;
+    }
+
+    .close {
+      float: right;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    footer {
+      padding: 20px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>LoadPack</h1>
-      <p class="tagline">Smart backpack that measures load & balance using sensors + BLE.</p>
-      <nav>
-        <a href="#how">How it works</a>
-        <a href="demo.html">Live Demo</a>
-        <a href="#app">App</a>
-        <a href="#team">Team</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div>
-        <h2>Know your load. Improve comfort. Stay safe.</h2>
-        <p>
-          LoadPack uses strap load sensors (left + right) to estimate total load and balance.
-          The ESP32 broadcasts data over Bluetooth (BLE) to a mobile app and to this website demo.
-        </p>
-        <div class="buttons">
-          <a class="btn" href="demo.html">Open Live Demo</a>
-          <a class="btn secondary" href="#how">How it Works</a>
-        </div>
-      </div>
-      <div class="card">
-        <p><b>Data path:</b> Load Cells → HX711 → ESP32 → BLE → App/Website</p>
-        <p><b>Deliverables:</b> Prototype + app + live web demo</p>
-        <p><b>Due:</b> Jan 13</p>
-      </div>
-    </section>
-
-    <section id="how">
-      <h3>How it works</h3>
-      <ol>
-        <li>Two load cells measure strap tension (left + right).</li>
-        <li>HX711 amplifiers convert sensor signal to readable values.</li>
-        <li>ESP32 calculates L/R/Total and sends BLE notifications.</li>
-        <li>App + Website display live values and can log data.</li>
-      </ol>
-
-      <div class="diagram" aria-label="System diagram">
-        <div class="box">Load Cells</div><div class="arrow">→</div>
-        <div class="box">HX711</div><div class="arrow">→</div>
-        <div class="box">ESP32</div><div class="arrow">→</div>
-        <div class="box">BLE</div><div class="arrow">→</div>
-        <div class="box">App + Website</div>
-      </div>
-    </section>
-
-    <section id="app">
-      <h3>Mobile app</h3>
-      <ul>
-        <li>Live Left/Right/Total</li>
-        <li>Record sessions</li>
-        <li>Export CSV</li>
-      </ul>
-      <p class="small">Add screenshots here once your app UI is ready.</p>
-    </section>
-
-    <section id="team">
-  <h3>Team</h3>
-  <p class="small">
-    Anaya Gill – Mobile App (Flutter), Bluetooth Integration<br>
-    Akshitha Ginjupalli – Hardware Design, ESP32, Sensors, Power System
+<header>
+  <h1>My BackPal</h1>
+  <p>
+    A smart backpack system that helps students monitor backpack load and
+    reduce the risk of back and posture-related injuries.
   </p>
-</section>
 
-    <footer>
-      <p>© <span id="year"></span> LoadPack</p>
-    </footer>
+  <button class="install-btn" id="installBtn">
+    📱 Install My BackPal App
+  </button>
+</header>
+
+<section>
+  <div class="card">
+    <h2>Problem</h2>
+    <p>
+      Many students carry backpacks that are too heavy, which can cause back,
+      neck, and shoulder pain over time.
+    </p>
   </div>
 
-  <script src="main.js"></script>
+  <div class="card">
+    <h2>Solution</h2>
+    <p>
+      My BackPal uses a load sensor inside a backpack connected to an ESP32 to
+      monitor weight and alert users when the load becomes unsafe.
+    </p>
+  </div>
+
+  <div class="card">
+    <h2>How It Works</h2>
+    <p>
+      Load Sensor → ESP32 → Wireless Connection → Web App / Mobile App Interface
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2>Team</h2>
+    <p>
+      Anaya Gill<br>
+      Akshitha Ginjupalli
+    </p>
+  </div>
+</section>
+
+<footer>
+  © My BackPal | Science Fair Project
+</footer>
+
+<!-- INSTALL MODAL -->
+<div class="modal" id="installModal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Install My BackPal</h2>
+    <p>Scan this QR code on your phone:</p>
+
+    <!-- QR CODE IMAGE -->
+    <img src="qr.png" alt="My BackPal QR Code" class="qr-img">
+
+    <p style="font-size:14px;">
+      iPhone: Share → Add to Home Screen
+    </p>
+  </div>
+</div>
+
+<script>
+  const installBtn = document.getElementById("installBtn");
+  const modal = document.getElementById("installModal");
+  const closeBtn = document.getElementById("closeModal");
+
+  installBtn.onclick = () => modal.style.display = "block";
+  closeBtn.onclick = () => modal.style.display = "none";
+
+  window.onclick = (e) => {
+    if (e.target === modal) modal.style.display = "none";
+  };
+</script>
+
 </body>
 </html>
