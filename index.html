@@ -1,100 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My BackPal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 50px 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 18px;
+      max-width: 700px;
+      margin: 0 auto 25px;
+    }
+
+    a.button {
+      display: inline-block;
+      padding: 14px 24px;
+      background: #3b82f6;
+      color: white;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    section {
+      padding: 40px 20px;
+      border-top: 1px solid #1e293b;
+    }
+  </style>
+</head>
+
 <body>
-  <div class="container">
-    <header>
-      <h1>LoadPack</h1>
-      <p class="tagline">A smart backpack that measures load and balance using sensors + Bluetooth.</p>
-      <nav>
-        <a href="#how">How it works</a>
-        <a href="#demo">Demo</a>
-        <a href="#app">App</a>
-        <a href="#team">Team</a>
-      </nav>
-    </header>
 
-    <section class="hero">
-      <div>
-        <h2>Know your load. Improve comfort. Stay safe.</h2>
-        <p>
-          LoadPack uses load sensors on the straps to estimate total weight and left/right balance.
-          Data is sent via Bluetooth to a mobile app for live display and logging.
-        </p>
-        <div class="buttons">
-          <a class="btn" href="#demo">See Demo</a>
-          <a class="btn secondary" href="#how">How It Works</a>
-        </div>
-      </div>
-      <div class="card">
-        <p><b>Project status:</b> Building + testing</p>
-        <p><b>Due:</b> Jan 13</p>
-        <p><b>Tech:</b> ESP32 + HX711 + Load Cells + BLE + App</p>
-      </div>
-    </section>
+<header>
+  <h1>My BackPal</h1>
+  <p>
+    A smart backpack system that helps students monitor backpack weight
+    and reduce back and posture injuries.
+  </p>
 
-    <section id="how">
-      <h3>How it works</h3>
-      <ol>
-        <li>Two load cells measure strap tension (left + right).</li>
-        <li>HX711 amplifiers convert sensor signals to readable values.</li>
-        <li>ESP32 calculates left/right/total and broadcasts data over BLE.</li>
-        <li>Mobile app displays and records the data.</li>
-      </ol>
+  <!-- THIS IS THE LIVE DEMO BUTTON -->
+  <a class="button" href="demo.html">Go to Live Sensor Demo</a>
+</header>
 
-      <div class="diagram">
-        <div class="box">Load Cells</div>
-        <div class="arrow">→</div>
-        <div class="box">HX711</div>
-        <div class="arrow">→</div>
-        <div class="box">ESP32</div>
-        <div class="arrow">→</div>
-        <div class="box">Bluetooth (BLE)</div>
-        <div class="arrow">→</div>
-        <div class="box">App</div>
-      </div>
-    </section>
+<section>
+  <h2>How It Works</h2>
+  <p>
+    Load sensors inside the backpack send data to an ESP32.
+    The ESP32 wirelessly transmits the data to this live dashboard.
+  </p>
+</section>
 
-    <section id="demo">
-      <h3>Demo (sample data for now)</h3>
-      <p>This will show live data once the ESP32 is connected. For now, here’s a sample preview:</p>
+<section>
+  <h2>Team</h2>
+  <p>
+    Anaya Gill<br>
+    Akshitha Ginjupalli
+  </p>
+</section>
 
-      <div class="grid">
-        <div class="metric">
-          <div class="label">Left (kg)</div>
-          <div id="left" class="value">5.20</div>
-        </div>
-        <div class="metric">
-          <div class="label">Right (kg)</div>
-          <div id="right" class="value">4.90</div>
-        </div>
-        <div class="metric wide">
-          <div class="label">Total (kg)</div>
-          <div id="total" class="value">10.10</div>
-        </div>
-      </div>
-
-      <p class="small">
-        Later: we can add a “Connect via Bluetooth” button (Chrome/Edge) using Web Bluetooth.
-      </p>
-    </section>
-
-    <section id="app">
-      <h3>Mobile app</h3>
-      <ul>
-        <li>Live left/right/total display</li>
-        <li>Record sessions</li>
-        <li>Export CSV</li>
-      </ul>
-      <p>Add screenshots here once your app UI is ready.</p>
-    </section>
-
-    <section id="team">
-      <h3>Team</h3>
-      <p>Add your names, roles, and a short paragraph about the project.</p>
-    </section>
-
-    <footer>
-      <p>© <span id="year"></span> LoadPack</p>
-    </footer>
-  </div>
-
-  <script type="module" src="/main.js"></script>
 </body>
+</html>
