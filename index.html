@@ -1,39 +1,78 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LoadPack</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LoadPack</title>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>LoadPack</h1>
+        <p class="tagline">Smart backpack that measures load & balance using sensors + BLE.</p>
+        <nav>
+          <a href="#how">How it works</a>
+          <a href="demo.html">Live Demo</a>
+          <a href="#app">App</a>
+          <a href="#team">Team</a>
+        </nav>
+      </header>
 
-<body>
-  <div class="container">
-    <h1>LoadPack</h1>
-    <p>
-      A smart backpack system that measures load balance using ESP32 sensors
-      and Bluetooth.
-    </p>
+      <section class="hero">
+        <div>
+          <h2>Know your load. Improve comfort. Stay safe.</h2>
+          <p>
+            Two strap sensors estimate left/right balance and total load.
+            The ESP32 broadcasts data over Bluetooth to a phone app (and this website demo).
+          </p>
+          <div class="buttons">
+            <a class="btn" href="demo.html">Open Live Demo</a>
+            <a class="btn secondary" href="#how">How it Works</a>
+          </div>
+        </div>
+        <div class="card">
+          <p><b>Tech:</b> Load Cells → HX711 → ESP32 → BLE → App/Website</p>
+          <p><b>Deliverables:</b> Working prototype + app + live web demo</p>
+          <p><b>Due:</b> Jan 13</p>
+        </div>
+      </section>
 
-    <a href="demo.html" class="button">
-      Open Live BLE Demo
-    </a>
+      <section id="how">
+        <h3>How it works</h3>
+        <ol>
+          <li>Load cells measure strap tension (left + right).</li>
+          <li>HX711 amplifies signals so the ESP32 can read them.</li>
+          <li>ESP32 calculates L/R/Total and broadcasts via BLE notifications.</li>
+          <li>App + Website show live data and log it.</li>
+        </ol>
 
-    <section>
-      <h3>Team</h3>
-      <p class="small">
-        Anaya Gill – Mobile App (Flutter), Bluetooth Integration<br>
-        Akshitha Ginjupalli – Hardware Design, ESP32, Sensors
-      </p>
-    </section>
+        <div class="diagram">
+          <div class="box">Load Cells</div><div class="arrow">→</div>
+          <div class="box">HX711</div><div class="arrow">→</div>
+          <div class="box">ESP32</div><div class="arrow">→</div>
+          <div class="box">BLE</div><div class="arrow">→</div>
+          <div class="box">App + Website</div>
+        </div>
+      </section>
 
-    <footer>
-      <p>© <span id="year"></span> LoadPack</p>
-    </footer>
-  </div>
+      <section id="app">
+        <h3>App</h3>
+        <ul>
+          <li>Live Left/Right/Total</li>
+          <li>Record sessions</li>
+          <li>Export CSV</li>
+        </ul>
+        <p>Add screenshots here after your Flutter UI is ready.</p>
+      </section>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
+      <section id="team">
+        <h3>Team</h3>
+        <p>Add names + roles + short project summary.</p>
+      </section>
+
+      <footer>© <span id="year"></span> LoadPack</footer>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
 </html>
