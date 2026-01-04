@@ -1,10 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta http-equiv="refresh" content="0; url=demo.html">
-  <title>LoadPack Live Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LoadPack</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  Redirecting to live demo…
+  <div class="container">
+    <h1>LoadPack</h1>
+    <p>
+      A smart backpack system that measures load balance using ESP32 sensors
+      and Bluetooth.
+    </p>
+
+    <a href="demo.html" class="button">
+      Open Live BLE Demo
+    </a>
+
+    <section>
+      <h3>Team</h3>
+      <p class="small">
+        Anaya Gill – Mobile App (Flutter), Bluetooth Integration<br>
+        Akshitha Ginjupalli – Hardware Design, ESP32, Sensors
+      </p>
+    </section>
+
+    <footer>
+      <p>© <span id="year"></span> LoadPack</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
